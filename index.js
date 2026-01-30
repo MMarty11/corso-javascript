@@ -67,7 +67,7 @@ function displayPokemonTable(pokemonList) {
 function updatePagination(data, offset) {
     const pageInfo = document.getElementById("pageInfo");
     const currentPage = Math.floor(offset/20) + 1;
-    const totalPages = Math.ceil(data.count/20)
+    const totalPages = Math.ceil(data.count/20);
 
     pageInfo.textContent = `Pagina ${currentPage} di ${totalPages} (${data.count} Pokemon Totali)`;
     
