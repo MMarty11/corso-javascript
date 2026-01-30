@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 10;">
+    <h1>Pokemon Dashboard</h1>
+    <div class="controls">
+        <button onclick="loadPokemon()">Prima Pagina</button>
+        <button onclick="loadPokemon()">Precedente</button> <!-- TODO: implemetare offset pagination -->
+        <button onclick="loadPokemon()">Successiva</button>
+    </div>
+
+    <div>
+        <div id="loading">Caricamento pokemon...</div>
+        <table id="pokemonTable">
+            <thead>
+                <tr>
+                    <th>Immagine</th>
+                    <th>Nome</th>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Altezza</th>
+                    <th>Peso</th>
+                </tr>
+            </thead> 
+            <tbody id="pokemonTableBody"></tbody>
+        </table>
+
+        <div id="detailPanel"></div>
+    </div>
+
+    <div id="pagination" style="
+        position: fixed;
+        bottom: 0;
+        padding: 20px;
+        background: white;
+        width: 100%;">
+        <div id="pageInfo"></div>
+    </div>
+    <script src="/index.js"></script>
+</body>
+</html>
