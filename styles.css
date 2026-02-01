@@ -1,0 +1,110 @@
+/* ========== BODY ========== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;   /* Grigio molto chiaro */
+  color: #333333;              /* Testo grigio scuro */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.controls {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ========== INTESTAZIONI ========== */
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3e50;              /* Blu scuro/grigio scuro */
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 auto;
+  border-bottom: 2px solid #3498db; /* Linea sotto il titolo */
+  padding-bottom: 10px;
+  
+}
+
+h2 {
+  font-size: 2rem;
+  color: #2980b9;             /* Blu medio */
+}
+
+/* ========== BUTTON ========== */
+button, .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #3498db;    /* Blu principale */
+  color: white;
+  border: none;
+  border-radius: 50px;         /* Bordo molto arrotondato */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;   /* Effetto di transizione */
+  text-decoration: none;
+  text-align: center;
+}
+
+button:hover, .btn:hover {
+  background-color: #2980b9;    /* Blu più scuro al passaggio */
+  transform: translateY(-2px);  /* Effetto "sollevamento" */
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+button:active, .btn:active {
+  transform: translateY(0);     /* Torna giù quando cliccato */
+}
+
+/* Bottone 2 (grigio) */
+.btn-2 {
+  background-color: #95a5a6;   /* Grigio medio */
+}
+
+.btn-2:hover {
+  background-color: #7f8c8d;
+}
+
+/* Bottone 3 (verde) */
+.btn-3 {
+  background-color: #2ecc71;
+}
+
+.btn-3:hover {
+  background-color: #27ae60;
+}
+
+/* ========== TABLE ========== */
+table {
+  width: 100%;
+  border-collapse: collapse;    /* Rimuove gli spazi tra le celle */
+  margin: 10px 0;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;            /* Fa sì che le bordi arrotondati funzionino */
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+th {
+  background-color: #3498db;   /* Blu per l'header */
+  color: white;
+  text-align: left;
+  padding: 16px;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ecf0f1; /* Linea separatrice */
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;   /* Riga pari: grigio chiarissimo */
+}
+
+tr:hover {
+  background-color: #e3f2fd;   /* Effetto hover sulla riga */
+}
