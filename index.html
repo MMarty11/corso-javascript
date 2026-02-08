@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body style="margin: 10;">
+
+<body>
     <h1>Pokemon Dashboard</h1>
     <div class="controls">
-        <button class="btn-1" onclick="loadPokemon()">Prima Pagina</button>
-        <button class="btn-2" onclick="loadPokemon()">Precedente</button> <!-- TODO: implemetare offset pagination -->
-        <button class="btn-3" onclick="loadPokemon()">Successiva</button>
+        <button class="btn-1" onclick="loadPokemon(0)">Prima Pagina</button>
+        <button class="btn-2" onclick="loadPokemon(-20)">Precedente</button>
+        <!-- TODO: implemetare offset pagination -->
+        <button class="btn-3" onclick="loadPokemon(20)">Successiva</button>
     </div>
 
-    <div>
-        <!-- <div id="loading">Caricamento pokemon...</div> -->
-        <table id="pokemonTable">
-            <thead>
-                <tr>
-                    <th>Immagine</th>
-                    <th>Nome</th>
-                    <th>ID</th>
-                    <th>Tipo</th>
-                    <th>Altezza</th>
-                    <th>Peso</th>
-                </tr>
-            </thead> 
-            <tbody id="pokemonTableBody"></tbody>
-        </table>
+    <div class="dashboard">
+        <div class="main-content">
+            <!-- <div id="loading">Caricamento pokemon...</div> -->
+            <table id="pokemonTable">
+                <thead>
+                    <tr>
+                        <th>Immagine</th>
+                        <th>Nome</th>
+                        <th>ID</th>
+                        <th>Tipo</th>
+                        <th>Altezza</th>
+                        <th>Peso</th>
+                    </tr>
+                </thead>
+                <tbody id="pokemonTableBody"></tbody>
+            </table>
+        </div>
 
-        <div id="detailPanel"></div>
+        <div id="sidePanel" class="side-panel">
+            <div class="side-panel-header">
+                <button id="closePanel">&times;</button>
+            </div>
+
+            <div id="panelContent">
+                <!-- contenuto dinamico -->
+            </div>
+        </div>
     </div>
 
     <div id="pagination" style="
@@ -42,6 +55,8 @@
         text-align: center;">
         <div id="pageInfo"></div>
     </div>
+
     <script src="/index.js"></script>
 </body>
+
 </html>

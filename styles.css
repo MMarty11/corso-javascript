@@ -1,67 +1,104 @@
 /* ========== BODY ========== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f7fa;   /* Grigio molto chiaro */
-  color: #333333;              /* Testo grigio scuro */
+  background-color: #f5f7fa;
+  /* Grigio molto chiaro */
+  color: #333333;
+  /* Testo grigio scuro */
   line-height: 1.6;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
 }
 
 .controls {
   text-align: center;
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
 }
 
 /* ========== INTESTAZIONI ========== */
-h1, h2, h3, h4, h5, h6 {
-  color: #2c3e50;              /* Blu scuro/grigio scuro */
-  margin-bottom: 15px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #2c3e50;
+  /* Blu scuro/grigio scuro */
+  margin-bottom: 0px;
 }
 
 h1 {
   font-size: 2.5rem;
   text-align: center;
   margin: 0 auto;
-  border-bottom: 2px solid #3498db; /* Linea sotto il titolo */
+  border-bottom: 2px solid #3498db;
+  /* Linea sotto il titolo */
   padding-bottom: 10px;
-  
+
 }
 
 h2 {
   font-size: 2rem;
-  color: #2980b9;             /* Blu medio */
+  color: #2980b9;
+}
+
+h3 {
+  font-size: 2rem;
+  color: #174767;
+  margin-top: 5px;
+}
+
+h4 {
+  margin-top: 0px;
+  border-bottom: 2px solid #3498db; 
+  padding-bottom: 4px;
+}
+
+p {
+  font-family: monospace;
+  font-size: 1rem;
+  margin: 0px;
 }
 
 /* ========== BUTTON ========== */
-button, .btn {
+button,
+.btn {
   display: inline-block;
   padding: 12px 25px;
-  background-color: #3498db;    /* Blu principale */
+  background-color: #3498db;
+  /* Blu principale */
   color: white;
   border: none;
-  border-radius: 50px;         /* Bordo molto arrotondato */
+  border-radius: 50px;
+  /* Bordo molto arrotondato */
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;   /* Effetto di transizione */
+  transition: all 0.3s ease;
+  /* Effetto di transizione */
   text-decoration: none;
   text-align: center;
 }
 
-button:hover, .btn:hover {
-  background-color: #2980b9;    /* Blu più scuro al passaggio */
-  transform: translateY(-2px);  /* Effetto "sollevamento" */
+button:hover,
+.btn:hover {
+  background-color: #2980b9;
+  /* Blu più scuro al passaggio */
+  transform: translateY(-2px);
+  /* Effetto "sollevamento" */
   box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
 }
 
-button:active, .btn:active {
-  transform: translateY(0);     /* Torna giù quando cliccato */
+button:active,
+.btn:active {
+  transform: translateY(0);
+  /* Torna giù quando cliccato */
 }
 
 /* Bottone 2 (grigio) */
 .btn-2 {
-  background-color: #95a5a6;   /* Grigio medio */
+  background-color: #95a5a6;
+  /* Grigio medio */
 }
 
 .btn-2:hover {
@@ -80,16 +117,19 @@ button:active, .btn:active {
 /* ========== TABLE ========== */
 table {
   width: 100%;
-  border-collapse: collapse;    /* Rimuove gli spazi tra le celle */
+  border-collapse: collapse;
+  /* Rimuove gli spazi tra le celle */
   margin: 10px 0;
   background-color: white;
   border-radius: 10px;
-  overflow: hidden;            /* Fa sì che le bordi arrotondati funzionino */
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  /* Fa sì che le bordi arrotondati funzionino */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 th {
-  background-color: #3498db;   /* Blu per l'header */
+  background-color: #3498db;
+  /* Blu per l'header */
   color: white;
   text-align: left;
   padding: 16px;
@@ -97,14 +137,224 @@ th {
 }
 
 td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #ecf0f1; /* Linea separatrice */
+  padding: 4px 16px;
+  border-bottom: 1px solid #ecf0f1;
+  /* Linea separatrice */
 }
 
 tr:nth-child(even) {
-  background-color: #f8f9fa;   /* Riga pari: grigio chiarissimo */
+  background-color: #f8f9fa;
+  /* Riga pari: grigio chiarissimo */
 }
 
 tr:hover {
-  background-color: #e3f2fd;   /* Effetto hover sulla riga */
+  background-color: #e3f2fd;
+  /* Effetto hover sulla riga */
+}
+
+tr.active {
+  background: #e9f4ff;
+}
+
+.pokemon-name {
+  font-weight: 700;
+}
+
+.pokemon-height {
+  font-weight: 500;
+}
+
+.pokemon-weight {
+  font-weight: 500;
+}
+
+/* ===== DASHBOARD LAYOUT ===== */
+
+.dashboard {
+  display: flex;
+  align-items: stretch;
+}
+
+/* area centrale */
+.main-content {
+  flex: 1;
+  transition: width 0.3s ease;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+/* ========== SIDE PANEL ========== */
+
+.side-panel {
+  width: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border-left: 1px solid #ecf0f1;
+  transition: width 0.3s ease;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05);
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+/* quando aperto */
+.side-panel.open {
+  width: 340px;
+}
+
+/* header */
+.side-panel-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 5px 0;
+}
+
+#closePanel {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: #555;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.closePanel:hover {
+  background: #e0e0e0;
+  transform: rotate(90deg);
+}
+
+/* contenuto */
+#panelContent {
+  padding: 0px 20px 20px 20px;
+  text-align: center;
+}
+
+.panel-section {
+  margin-top: 5px;
+  text-align: left;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #ecf0f1;
+  font-size: 0.9rem;
+}
+
+.stat-name {
+  font-weight: 600;
+}
+
+.stat-base {
+  font-weight: 500;
+  color: #3498db;
+}
+
+/* ===== PANEL HERO ===== */
+
+.panel-hero {
+  display: flex;
+  justify-content: center;
+}
+
+.panel-hero img {
+  width: 140px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  margin-top: -10px;;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* ========== POKEMON TYPES ========== */
+
+/* Classe GENERICA per i badge dei tipi */
+.type-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin: 0px 2.5px;
+  font-size: 0.85em;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize;
+  /* Trasforma "grass" → "Grass" */
+}
+
+/* Classi SPECIFICHE per ogni tipo */
+.type-grass {
+  background-color: #78C850;
+}
+
+.type-fire {
+  background-color: #F08030;
+}
+
+.type-water {
+  background-color: #6890F0;
+}
+
+.type-electric {
+  background-color: #F8D030;
+}
+
+.type-ice {
+  background-color: #98D8D8;
+}
+
+.type-fighting {
+  background-color: #C03028;
+}
+
+.type-poison {
+  background-color: #A040A0;
+}
+
+.type-ground {
+  background-color: #E0C068;
+}
+
+.type-flying {
+  background-color: #A890F0;
+}
+
+.type-psychic {
+  background-color: #F85888;
+}
+
+.type-bug {
+  background-color: #A8B820;
+}
+
+.type-rock {
+  background-color: #B8A038;
+}
+
+.type-ghost {
+  background-color: #705898;
+}
+
+.type-dragon {
+  background-color: #7038F8;
+}
+
+.type-dark {
+  background-color: #705848;
+}
+
+.type-steel {
+  background-color: #B8B8D0;
+}
+
+.type-fairy {
+  background-color: #EE99AC;
+}
+
+.type-normal {
+  background-color: #A8A878;
 }
